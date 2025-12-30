@@ -1,0 +1,255 @@
+/* =========================
+   RESET & BASE
+   ========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0f172a;
+
+    /* BACKGROUND IMAGE */
+    background: url("Gemini_Generated_Image_mghr8smghr8smghr.png") center / cover no-repeat fixed;
+
+    overflow-x: hidden;
+}
+
+/* SOFT LIGHT OVERLAY */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(
+        circle at top,
+        rgba(255, 255, 255, 0.9),
+        rgba(240, 244, 248, 0.95)
+    );
+    z-index: -1;
+}
+
+/* =========================
+   HEADER
+   ========================= */
+#header {
+    padding: 22px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    animation: fadeDown 0.8s ease-out;
+}
+
+#header h1 {
+    font-size: 1.9rem;
+    font-weight: 800;
+    letter-spacing: 0.4px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 22px;
+    align-items: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: #1f2933;
+    font-weight: 500;
+    position: relative;
+}
+
+/* subtle underline animation */
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0;
+    height: 2px;
+    background: #f97316;
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+nav a.btn {
+    padding: 8px 18px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #f97316, #fbbf24);
+    color: #ffffff;
+    font-weight: 700;
+}
+
+/* =========================
+   HERO SECTION
+   ========================= */
+#hero {
+    padding: 120px 10% 100px;
+    text-align: center;
+    animation: fadeUp 1s ease-out;
+}
+
+#home_page_intro {
+    font-size: 3rem;
+    font-weight: 900;
+    margin-bottom: 12px;
+}
+
+#subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 22px;
+    color: #374151;
+}
+
+#description {
+    max-width: 720px;
+    margin: 0 auto 40px;
+    line-height: 1.8;
+    font-size: 1.05rem;
+    color: #4b5563;
+}
+
+/* =========================
+   CTA BUTTON
+   ========================= */
+.cta-button {
+    display: inline-block;
+    padding: 16px 38px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #f97316, #fbbf24);
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 800;
+    letter-spacing: 0.4px;
+
+    box-shadow: 0 10px 30px rgba(249, 115, 22, 0.35);
+    animation: pulseGlow 3s infinite;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+}
+
+/* =========================
+   FEATURES SECTION
+   ========================= */
+#features {
+    padding: 80px 8% 120px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 45px;
+}
+
+#learn_more {
+    grid-column: 1 / -1;
+    text-align: center;
+    font-size: 2.4rem;
+    font-weight: 900;
+    margin-bottom: 10px;
+}
+
+/* =========================
+   FLOATING CARDS (KEY AREA)
+   ========================= */
+.option {
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 26px;
+    padding: 36px;
+    min-height: 360px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.12);
+    animation: floatCard 6s ease-in-out infinite;
+}
+
+.option:nth-child(2) {
+    animation-delay: 2s;
+}
+
+.option:nth-child(3) {
+    animation-delay: 2s;
+}
+
+.option:hover {
+    transform: translateY(-14px) scale(1.02);
+}
+
+.option h3 {
+    font-size: 1.6rem;
+    font-weight: 800;
+    margin-bottom: 14px;
+}
+
+.option p {
+    line-height: 1.7;
+    color: #374151;
+    font-size: 1rem;
+}
+
+/* =========================
+   FOOTER
+   ========================= */
+footer {
+    padding: 40px 8%;
+    text-align: center;
+    color: #6b7280;
+    font-size: 0.9rem;
+}
+
+/* =========================
+   ANIMATIONS
+   ========================= */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes floatCard {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulseGlow {
+    0% {
+        box-shadow: 0 10px 30px rgba(249, 115, 22, 0.35);
+    }
+    50% {
+        box-shadow: 0 15px 45px rgba(249, 115, 22, 0.6);
+    }
+    100% {
+        box-shadow: 0 10px 30px rgba(249, 115, 22, 0.35);
+    }
+}

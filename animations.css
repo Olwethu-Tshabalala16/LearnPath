@@ -1,0 +1,106 @@
+/* Background container */
+.animated-bg {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: -1;
+}
+
+/* Base image style */
+.bg-item {
+    position: absolute;
+    opacity: 0.5;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+/* -------------------------
+   ENTRY FROM LEFT → RIGHT
+   ------------------------- */
+.bg-item.slow {
+    width: 240px;
+    top: 10%;
+    left: -30%;
+    animation: driftLR 90s infinite;
+}
+
+.bg-item.slow:nth-child(3n) {
+    top: 70%;
+    animation-delay: -30s;
+}
+
+/* -------------------------
+   ENTRY FROM RIGHT → LEFT
+   ------------------------- */
+.bg-item.medium {
+    width: 200px;
+    top: 40%;
+    right: -30%;
+    animation: driftRL 70s infinite;
+}
+
+.bg-item.medium:nth-child(4n) {
+    top: 15%;
+    animation-delay: -20s;
+}
+
+/* -------------------------
+   ENTRY FROM BOTTOM → TOP
+   ------------------------- */
+.bg-item.fast {
+    width: 220px;
+    left: 50%;
+    bottom: -30%;
+    animation: driftBT 50s infinite;
+}
+
+.bg-item.fast:nth-child(5n) {
+    left: 20%;
+    animation-delay: -15s;
+}
+
+/* -------------------------
+   ANIMATIONS
+   ------------------------- */
+
+/* Left → Right */
+@keyframes driftLR {
+    0% {
+        transform: translateX(0) translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateX(60vw) translateY(-60px) rotate(10deg);
+    }
+    100% {
+        transform: translateX(130vw) translateY(0) rotate(0deg);
+    }
+}
+
+/* Right → Left */
+@keyframes driftRL {
+    0% {
+        transform: translateX(0) translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateX(-60vw) translateY(50px) rotate(-8deg);
+    }
+    100% {
+        transform: translateX(-130vw) translateY(0) rotate(0deg);
+    }
+}
+
+/* Bottom → Top */
+@keyframes driftBT {
+    0% {
+        transform: translateY(0) translateX(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-60vh) translateX(40px) rotate(12deg);
+    }
+    100% {
+        transform: translateY(-130vh) translateX(0) rotate(0deg);
+    }
+}

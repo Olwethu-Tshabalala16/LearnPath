@@ -1,0 +1,115 @@
+/* =========================
+   RESET
+   ========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* =========================
+   PAGE STRUCTURE
+   ========================= */
+body {
+    min-height: 100vh;
+    background-color: #f9fafb;
+    color: #1f2937;
+}
+
+/* =========================
+   HEADER
+   ========================= */
+#header {
+    padding: 22px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffffff;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+#header h1 {
+    font-size: 1.9rem;
+    font-weight: 800;
+    letter-spacing: 0.4px;
+    color: #f97316;
+}
+
+/* Navigation */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 22px;
+    align-items: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: #1f2933;
+    font-weight: 500;
+}
+
+/* =========================
+   MAIN CONTENT
+   ========================= */
+main.container {
+    max-width: 800px;
+    margin: 80px auto 0;
+    text-align: center;
+}
+
+/* Headings */
+.container h1 {
+    font-size: 32px;
+    color: #f97316;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    font-size: 16px;
+    color: #6b7280;
+    margin-bottom: 40px;
+}
+
+/* =========================
+   ROLE CARDS
+   ========================= */
+.roles {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.role-card {
+    width: 260px;
+    padding: 32px 20px;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.role-card:hover {
+    border-color: #f97316;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Emoji */
+.emoji {
+    font-size: 48px;
+    margin-bottom: 16px;
+}
+
+/* Text */
+.role-card h3 {
+    font-size: 18px;
+    margin-bottom: 6px;
+    color: #111827;
+}
+
+.role-card span {
+    font-size: 14px;
+    color: #6b7280;
+}
